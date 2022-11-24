@@ -1,12 +1,19 @@
+import { useSelector, useDispatch } from 'react-redux'
+import { logOut } from './LoginSlice'
+import { Link } from 'react-router-dom'
+
+
 export function Navbar(params) {
+  const isLoggedIn = useSelector((state) => state.loggedIn.value);
+  const dispatch = useDispatch();
   return (
-    <div class="topnav">
-      <a class="active" id="Navtitle" href="/">
+    <div className="topnav">
+      <a className="active" id="Navtitle" href="/">
         Joke Web App
       </a>
-      <div class="topnav-right">
+      <div className="topnav-right">
         <h3>Post a Joke !</h3>
-        <div class="vl"></div>
+        <div className="vl"></div>
         {/* <NavLink
         exact
         activeClassName="navbar__link--active"
@@ -15,9 +22,14 @@ export function Navbar(params) {
       >
         Trending
       </NavLink> */}
-        <a href="/login">
+        {!isLoggedIn && 
+        <Link to="/login">
           <b>Login</b> <br></br>or <b>Register</b>
-        </a>
+        </Link>}
+        {isLoggedIn && 
+        <Link to="#" onClick={() => dispatch(logOut())}>
+          <b>Sign Out</b>
+        </Link>}
       </div>
     </div>
   );

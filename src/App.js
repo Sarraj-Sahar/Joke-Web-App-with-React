@@ -9,12 +9,14 @@ import Recent from "./Pages/Recent";
 import Login from "./Pages/Login";
 import LeaderBoard from "./Pages/LeaderBoard";
 import Register from "./Pages/Register";
+import { useState } from "react";
 
 function App() {
+  const [isLoggedIn,setLogin] = useState(false);
   return (
     <div className="App">
       <Router>
-        <Navbar></Navbar>
+        <Navbar login={[isLoggedIn,setLogin]}></Navbar>
         <Filters></Filters>
         <Routes>
           <Route path={"/"} element={<Trending />} />
