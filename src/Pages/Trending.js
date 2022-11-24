@@ -1,34 +1,26 @@
 import React, { useState } from "react";
-import { data } from "../Data/jokes_data";
+import { jokesList } from "../Data/jokes_data";
 import JokeCard from "../Components/Joke_Card";
-function Trending({ jokes }) {
-  //   const [Jokes, setJokes] = useState(data);
-  //   return (
-  //     <div
-  //       style={{
-  //         display: "flex",
-  //         flexDirection: "column",
-  //         justifyContent: "space-around",
-  //       }}
-  //     >
-  //       <h1>Helloooooooo</h1>
-  //       {/* {jokes.map((elt) => (
-  //         <Joke key={elt.id} joke={elt} />
-  //       ))} */}
-  //     </div>
-  //   );
 
+function Trending() {
+  const [Jokes, setJokes] = useState(
+    jokesList
+      .slice(0)
+      .sort((a, b) => a.likes - b.likes)
+      .reverse()
+  );
+  //joke list sorted according to likes
+  //although Trending should be done according to date AND likes
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        // justifyContent: "space-around",
         alignContent: "center",
         alignItems: "center",
       }}
     >
-      {jokes.map((elt) => (
+      {Jokes.map((elt) => (
         <JokeCard key={elt.id} joke={elt} />
       ))}
     </div>
