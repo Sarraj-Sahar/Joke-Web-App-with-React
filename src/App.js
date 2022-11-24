@@ -17,13 +17,11 @@ function App() {
     <div className="App">
       <Router>
         <Navbar login={[isLoggedIn,setLogin]}></Navbar>
-        <Filters></Filters>
         <Routes>
-          <Route path={"/"} element={<Trending />} />
-          <Route path={"Trending"} element={<Trending />} />
-          <Route path="Recent" element={<Recent />} />
-
-          <Route path="LeaderBoard" element={<LeaderBoard />} />
+          <Route path="/" element={<div><Filters/><Trending/></div>} />
+          <Route path="/Trending" element={<div><Filters/><Trending/></div>} />
+          <Route path="/Recent" element={<div><Filters/><Recent/></div>} />
+          <Route path="/LeaderBoard" element={<div><Filters/><LeaderBoard/></div>} />
 
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />

@@ -5,8 +5,8 @@ export function Filters(params) {
     <div className="filters">
       <NavLink
         exact="true"
-        className={({ isActive }) => isActive? "navbar__link--active": "navbar__link"} 
-        to="Trending"
+        className={({ isActive }) => isActive? "navbar__link navbar__link--active": "navbar__link"} 
+        to="/Trending"
       >
         Trending
       </NavLink>
@@ -14,8 +14,8 @@ export function Filters(params) {
       <div className="vl"></div>
 
       <NavLink
-        className={({ isActive }) => isActive? "navbar__link--active": "navbar__link"} 
-        to="Recent"
+        className={({ isActive }) => isActive? "navbar__link navbar__link--active": "navbar__link"} 
+        to="/Recent"
       >
         Recent
       </NavLink>
@@ -23,10 +23,10 @@ export function Filters(params) {
 
       <NavLink
         exact="true"
-        className={({ isActive }) => isActive? "navbar__link--active": "navbar__link"} 
-        to="LeaderBoard"
+        className={({ isActive }) => isActive? "navbar__link navbar__link--active": "navbar__link"} 
+        to="/LeaderBoard"
       >
-        LearderBoard
+        LeaderBoard
       </NavLink>
     </div>
   );
