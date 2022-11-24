@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import UserCard from "../Components/User_Card";
-function LeaderBoard({ users }) {
+import { usersList } from "../Data/users_data";
+
+function LeaderBoard() {
+  const [Users, setUsers] = useState(
+    usersList
+      .slice(0)
+      .sort((a, b) => a.upvotes - b.upvotes)
+      .reverse()
+  );
+
   return (
     <div
       style={{
@@ -11,7 +20,7 @@ function LeaderBoard({ users }) {
         alignItems: "center",
       }}
     >
-      {users.map((elt) => (
+      {Users.map((elt) => (
         <UserCard key={elt.id} user={elt} />
       ))}
 
