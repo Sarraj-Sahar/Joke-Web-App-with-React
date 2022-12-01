@@ -1,6 +1,6 @@
 import {useNavigate} from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-import { logIn } from '../Components/LoginSlice'
+import { logIn } from '../Redux/LoginSlice'
 function Login(params) {
   const dispatch = useDispatch()
   const navigate = useNavigate();
