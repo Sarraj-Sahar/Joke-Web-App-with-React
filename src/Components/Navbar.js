@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { logOut } from './LoginSlice'
+import { logOut } from '../Redux/LoginSlice'
 import { Link } from 'react-router-dom'
 
 
