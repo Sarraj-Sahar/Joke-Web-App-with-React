@@ -1,7 +1,7 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { logOut } from '../Redux/LoginSlice'
-import { Link } from 'react-router-dom'
-
+import { useSelector, useDispatch } from "react-redux";
+import { logOut } from "../../Redux/LoginSlice";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export function Navbar(params) {
   const isLoggedIn = useSelector((state) => state.loggedIn.value);
@@ -22,14 +22,16 @@ export function Navbar(params) {
       >
         Trending
       </NavLink> */}
-        {!isLoggedIn && 
-        <Link to="/login">
-          <b>Login</b> <br></br>or <b>Register</b>
-        </Link>}
-        {isLoggedIn && 
-        <Link to="#" onClick={() => dispatch(logOut())}>
-          <b>Sign Out</b>
-        </Link>}
+        {!isLoggedIn && (
+          <Link to="/login">
+            <b>Login</b> <br></br>or <b>Register</b>
+          </Link>
+        )}
+        {isLoggedIn && (
+          <Link to="#" onClick={() => dispatch(logOut())}>
+            <b>Sign Out</b>
+          </Link>
+        )}
       </div>
     </div>
   );
