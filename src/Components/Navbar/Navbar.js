@@ -19,16 +19,15 @@ export default function Navbar() {
       <div className="topbarCenter">
         <div className="searchbar">
           <Search className="searchIcon" />
-          <input
-            placeholder="Search for friend, post or video"
-            className="searchInput"
-          />
+          <input placeholder="Search for a joke" className="searchInput" />
         </div>
       </div>
-      <div className="topbarRight">
+
+      <div className="topbarRight">Welcome Back ! </div>
+      {/* <div className="topbarRight">
         {/* /// */}
-        {/* <Link to={`/profile/${user.username}`}> */}
-        {/* <img
+      {/* <Link to={`/profile/${user.username}`}> */}
+      {/* <img
             src={
               user.profilePicture
                 ? PF + user.profilePicture
@@ -37,13 +36,13 @@ export default function Navbar() {
             alt=""
             className="topbarImg"
           /> */}
-        {/* </Link> */}
-        {/* /// */}
-        {/* <Link to={`/profile/${user.username}`}> */}
+      {/* </Link> */}
+      {/* /// */}
+      {/* <Link to={`/profile/${user.username}`}> }
         <Link to={`/profile`}>
           <img src="/assets/person/1.jpeg" alt="" className="topbarImg" />
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

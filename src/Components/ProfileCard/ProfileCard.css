@@ -5,7 +5,8 @@
     position: relative;
     gap: 1rem;
     overflow-x: clip;
-background-color: aqua;}
+    border: 1px solid gray;
+}
 
 .ProfileImages{
     position: relative;
@@ -81,13 +82,13 @@ background-color: aqua;}
   
   .vl {
     height: 150%;
-    border-left: 2px solid var(--hrColor);
+    border-left: 2px solid var(--);
   }
 
 
   .ProfileCard>span{
       font-weight: bold;
-      color: orange;
+      color: #00d89b;
       align-self: center;
       margin-bottom: 1rem;
       cursor: pointer;

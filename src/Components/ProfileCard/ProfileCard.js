@@ -2,7 +2,7 @@ import React from "react";
 // import Cover from "../../img/cover.jpg";
 // import Profile from "../../img/profileImg.jpg";
 import "./ProfileCard.css";
-const ProfileCard = () => {
+const ProfileCard = (user) => {
   const ProfilePage = true;
   return (
     <div className="ProfileCard">
@@ -12,7 +12,7 @@ const ProfileCard = () => {
       </div>
 
       <div className="ProfileName">
-        <span>Zendaya MJ</span>
+        <span>Jane Doe</span>
         {/* <span>Senior UI/UX Designer</span> */}
       </div>
 
@@ -28,20 +28,12 @@ const ProfileCard = () => {
             <span>15</span>
             <span>Likes</span>
           </div>
-
-          {ProfilePage && (
-            <>
-              <div className="vl"></div>
-              <div className="follow">
-                <span>3</span>
-                <span>Posts</span>
-              </div>
-            </>
-          )}
         </div>
         <hr />
       </div>
-      {ProfilePage ? "" : <span>My Profile</span>}
+      {<span>My Profile</span>}
+
+      {/* {ProfilePage ? "" : <span>My Profile</span>} */}
     </div>
   );
 };
