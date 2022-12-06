@@ -2,36 +2,26 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import { Navbar } from "./Components/Navbar/Navbar";
 import { Filters } from "./Components/Filters";
-import Trending from "./Pages/Trending";
-import Recent from "./Pages/Recent";
+import Trending from "./Pages/Trending/Trending";
+import Recent from "./Pages/Recent/Recent";
 import Login from "./Pages/Login/Login";
-import LeaderBoard from "./Pages/LeaderBoard";
+import LeaderBoard from "./Pages/LeaderBoard/LeaderBoard";
 import Register from "./Pages/Register/Register";
 import { useState } from "react";
-
+import Home from "./Pages/Home/Home";
 function App() {
-  const [isLoggedIn, setLogin] = useState(false);
+  const [isLoggedIn, setLogin] = useState(true);
   return (
     <div className="App">
       <Router>
-        <Navbar login={[isLoggedIn, setLogin]}></Navbar>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <div>
-                <Filters />
-                <Trending />
-              </div>
-            }
-          />
+          <Route path="/" element={isLoggedIn ? <Home /> : <Register />} />
+
           <Route
             path="/Trending"
             element={
               <div>
-                <Filters />
                 <Trending />
               </div>
             }
@@ -40,7 +30,6 @@ function App() {
             path="/Recent"
             element={
               <div>
-                <Filters />
                 <Recent />
               </div>
             }
@@ -49,7 +38,6 @@ function App() {
             path="/LeaderBoard"
             element={
               <div>
-                <Filters />
                 <LeaderBoard />
               </div>
             }
