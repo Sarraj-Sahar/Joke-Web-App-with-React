@@ -92,3 +92,11 @@
     cursor: pointer;
   }
   
+  .authLink {
+    color:white;
+  }
+
+  .authLink:hover{
+    color:white;
+    text-decoration: underline;
+  }
