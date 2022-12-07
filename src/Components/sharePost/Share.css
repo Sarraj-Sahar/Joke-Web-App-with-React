@@ -12,8 +12,12 @@
   }
   
   .shareTop {
+    /* display: flex; */
+    /* align-items: center; */
+  }
+
+  .TopFirstPart{
     display: flex;
-    align-items: center;
   }
   
   .shareProfileImg {
@@ -34,10 +38,13 @@
   }
   
   .shareHr {
-    margin: 20px;
+    margin: 5px;
+    margin-left: 10%;
+    width: 70%;
   }
   
   .shareBottom {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;

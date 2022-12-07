@@ -10,26 +10,32 @@ export function UserCard({ user }) {
   return (
     <Card
       style={{
-        width: "50%",
+        width: "40%",
         margin: "1%",
         display: "flex",
         flexDirection: "column",
       }}
     >
       <CardHeader
-        style={{ display: "flex", flexDirection: "column" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
         avatar={
-          <Avatar style={{ backgroundColor: "indigo" }} aria-label="recipe">
+          <Avatar
+            style={{ backgroundColor: "#00d89b", marginBottom: "30px" }}
+            aria-label="recipe"
+          >
             {user.username.charAt(0).toUpperCase()}
           </Avatar>
         }
         title={user.username}
-        // subheader={"joined " + user.dateJoined}
+        subheader={"joined " + user.biography}
       />
 
       <CardContent>
-        <FavoriteIcon style={{ color: "pink" }} />
-        <Typography variant="body2" color="text.secondary">
+        <FavoriteIcon style={{ color: "red" }} />
+        <Typography variant="body2" color="text.primary">
           {user.upvotes + " upvotes"}
         </Typography>
       </CardContent>

@@ -17,12 +17,7 @@ export default function Sidebar() {
               className="sidebarIcon"
               style={{ color: "#FF5722" }}
             />
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "navbar__link navbar__link--active" : "navbar__link"
-              }
-              to="/Trending"
-            >
+            <NavLink className="filter" to="/Trending">
               Trending
             </NavLink>
           </li>
@@ -32,30 +27,18 @@ export default function Sidebar() {
               style={{ color: "#09d3ac" }}
             />
 
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "navbar__link navbar__link--active" : "navbar__link"
-              }
-              to="/Recent"
-            >
+            <NavLink className="filter" to="/Recent">
               Recent
             </NavLink>
-            {/* <span className="sidebarListItemText">Recent</span> */}
           </li>
           <li className="sidebarListItem">
             <Groups3TwoToneIcon
               className="sidebarIcon"
               style={{ color: "#FFCA28" }}
             />
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "navbar__link navbar__link--active" : "navbar__link"
-              }
-              to="/LeaderBoard"
-            >
+            <NavLink className="filter" to="/LeaderBoard">
               LeaderBoard
             </NavLink>
-            {/* <span className="sidebarListItemText">Leaderboard</span> */}
           </li>
         </ul>
         <hr className="sidebarHr" />
