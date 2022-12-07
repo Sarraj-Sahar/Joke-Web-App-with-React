@@ -10,28 +10,22 @@ export default function Share() {
 
   const handlePostJoke = (event) => {
     event.preventDefault();
-    console.log(title);
-    console.log(text);
-    console.log(user);
     const body = {
       title: title,
       jokeText: text,
       jokeMedia: "",
-      author: "admin",
+      author: user.username,
     };
-
-    console.log(body);
     fetch("https://jokeproject.onrender.com/jokes", {
       method: "POST",
-      mode: "no-cors",
-
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      // body: JSON.stringify(credentials),
-      body: body,
-    }).then((result) => {
-      console.log(result);
+      body: JSON.stringify(body),
+    }).then(result => result.json())
+    .then((result) => {
+      if(result.joke) window.location.reload(true);
+      else console.log(result);
     });
     //navigate("/");
   };
