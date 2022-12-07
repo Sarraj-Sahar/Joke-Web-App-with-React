@@ -3,14 +3,42 @@ import { useDispatch } from "react-redux";
 import { logIn } from "../../Redux/LoginSlice";
 import "./Login.css";
 import { CircularProgress } from "@material-ui/core";
+import { useState } from "react";
 
 function Login(params) {
+  const [username, setUserName] = useState();
+  const [password, setPassword] = useState();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
+
+  const handleLogin = (event) => {
     event.preventDefault();
-    dispatch(logIn());
-    navigate("/");
+    //dispatch(logIn());
+    const credentials = {
+      username:username,
+      password:password
+    };
+    fetch('https://jokeproject.onrender.com/users/auth', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+    }).then((response)=>response.json())
+    .then((result)=>{
+      console.log(result);
+      if(result.token) {
+        localStorage.setItem("user",JSON.stringify(result));
+        navigate("/");
+      } 
+      else {
+        console.log("incorrect creds");
+      }
+    })
+    
+    
+    ;
+    //navigate("/");
   };
 
   return (
@@ -23,21 +51,22 @@ function Login(params) {
           </span>
         </div>
         <div className="loginRight">
-          <form className="loginBox" onSubmit={handleSubmit}>
+          <form className="loginBox">
             <input
-              placeholder="Email"
-              type="email"
+              placeholder="Username"
+              type="Username"
               required
               className="loginInput"
+              onChange={e => setUserName(e.target.value)}
             />
             <input
               placeholder="Password"
               type="password"
               required
-              minLength="6"
               className="loginInput"
+              onChange={e => setPassword(e.target.value)}
             />
-            <button className="loginButton" type="submit" disabled={false}>
+            <button className="loginButton" type="button" disabled={false} onClick={handleLogin}>
               {"Log In"}
               {/* TODO: place circularProgess Bar while fetching user data */}
               {/* {isFetching ? (
