@@ -17,11 +17,20 @@ function JokeCard({ joke }) {
   return (
     <Card style={{ width: "80%", margin: "1%" }}>
       <Card.Body>
-        <Card.Title style={{ float: "left" }}>{joke.title}</Card.Title>
-
-        <Card.Text style={{ display: "inline-block", textAlign: "left" }}>
+        {/* <div className="TopCard"> */}
+        <Card.Title style={{ display: "inline-block", float: "left" }}>
+          {joke.title}
+        </Card.Title>
+        <br />
+        <br />
+        <Card.Text
+          style={{ display: "inline-block", float: "left", textAlign: "left" }}
+        >
           {joke.jokeText}
         </Card.Text>
+        <br />
+        <br />
+        {/* </div> */}
         <div className="bottomCard">
           <Typography
             variant="subtitle1"
@@ -43,10 +52,13 @@ function JokeCard({ joke }) {
               />
             </IconButton>
             <IconButton aria-label="share">
-              <ShareIcon style={{ color: "#00B2FF" }} />
+              <ShareIcon
+                className="MyShareIcon"
+                sx={{ "&:hover": { color: "#00B2FF" } }}
+              />
             </IconButton>
             <IconButton aria-label="comment">
-              <CommentIcon style={{ color: "56a822" }} />
+              <CommentIcon sx={{ "&:hover": { color: "#56a822" } }} />
             </IconButton>
           </div>
         </div>

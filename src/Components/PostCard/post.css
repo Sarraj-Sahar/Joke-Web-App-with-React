@@ -76,3 +76,16 @@
       border-bottom: 1px dashed gray;
       font-size: 15px;
   }
+
+
+  .TopCard{
+    display: flex;
+    flex-direction: column;
+  }
+  /* .MyShareIcon{
+    color: blue;
+  }
+
+  .ShareIcon:hover{
+    color: #00B2FF;
+  } */
