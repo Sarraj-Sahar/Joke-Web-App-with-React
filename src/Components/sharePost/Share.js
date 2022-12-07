@@ -16,7 +16,7 @@ export default function Share() {
       jokeMedia: "",
       author: user.username,
     };
-    fetch("http://localhost:5000/jokes", {
+    fetch("https://jokeproject.onrender.com/jokes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
