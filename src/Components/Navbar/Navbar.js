@@ -33,8 +33,26 @@ export default function Navbar() {
       <div className="topbarRight">
         {user ? (
           <div>
-            Welcome back {user.username} !{" "}
-            <a className="authLink" onClick={() => logout()}>
+            Welcome back
+            <span
+              style={{
+                "font-weight": "bold",
+                color: "#00d89b",
+                margin: "5px",
+              }}
+            >
+              {user.username}
+            </span>
+            !
+            <a
+              className="authLink"
+              style={{
+                marginLeft: "10px",
+                "border-left": "1px solid gray",
+                padding: "10px",
+              }}
+              onClick={() => logout()}
+            >
               Sign out
             </a>
           </div>

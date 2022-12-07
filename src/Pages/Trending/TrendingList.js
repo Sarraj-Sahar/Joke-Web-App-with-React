@@ -1,9 +1,6 @@
 import "./Trending.css";
-
 import React, { useState, useEffect } from "react";
-// import { jokesList } from "../../Data/jokes_data";
 import Post from "../../Components/PostCard/post";
-import { Navbar } from "../../Components/Navbar/Navbar";
 import Share from "../../Components/sharePost/Share";
 function TrendingList() {
   const [Jokes, setJokes] = useState([]);

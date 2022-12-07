@@ -20,17 +20,17 @@ export function UserCard({ user }) {
         style={{ display: "flex", flexDirection: "column" }}
         avatar={
           <Avatar style={{ backgroundColor: "indigo" }} aria-label="recipe">
-            {user.name.charAt(0).toUpperCase()}
+            {user.username.charAt(0).toUpperCase()}
           </Avatar>
         }
-        title={user.name}
+        title={user.username}
         // subheader={"joined " + user.dateJoined}
       />
 
       <CardContent>
         <FavoriteIcon style={{ color: "pink" }} />
         <Typography variant="body2" color="text.secondary">
-          {user.upvotes + " Likes"}
+          {user.upvotes + " upvotes"}
         </Typography>
       </CardContent>
     </Card>

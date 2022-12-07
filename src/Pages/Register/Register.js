@@ -28,7 +28,7 @@ export default function Register() {
         console.log(result);
 
         if (result.username) {
-          navigate("/");
+          navigate("/login");
         } else {
           console.log("register failed");
         }

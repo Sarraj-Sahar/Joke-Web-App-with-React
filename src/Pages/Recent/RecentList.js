@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { jokesList } from "../../Data/jokes_data";
 import Post from "../../Components/PostCard/post";
 import "../Trending/Trending.css";
 import Share from "../../Components/sharePost/Share";

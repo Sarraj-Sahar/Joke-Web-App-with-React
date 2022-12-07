@@ -1,6 +1,11 @@
 import "./Sidebar.css";
-import { RssFeed, Chat, PlayCircleFilledOutlined } from "@material-ui/icons";
+import WhatshotTwoToneIcon from "@mui/icons-material/WhatshotTwoTone";
+import RestoreTwoToneIcon from "@mui/icons-material/RestoreTwoTone";
+import Groups3OutlinedIcon from "@mui/icons-material/Groups3Outlined";
+import Groups3TwoToneIcon from "@mui/icons-material/Groups3TwoTone";
+
 import { NavLink } from "react-router-dom";
+
 import ProfileCard from "../ProfileCard/ProfileCard";
 export default function Sidebar() {
   return (
@@ -8,7 +13,10 @@ export default function Sidebar() {
       <div className="sidebarWrapper">
         <ul className="sidebarList">
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
+            <WhatshotTwoToneIcon
+              className="sidebarIcon"
+              style={{ color: "#FF5722" }}
+            />
             <NavLink
               className={({ isActive }) =>
                 isActive ? "navbar__link navbar__link--active" : "navbar__link"
@@ -17,10 +25,12 @@ export default function Sidebar() {
             >
               Trending
             </NavLink>
-            {/* <span className="sidebarListItemText">Trending</span> */}
           </li>
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
+            <RestoreTwoToneIcon
+              className="sidebarIcon"
+              style={{ color: "#09d3ac" }}
+            />
 
             <NavLink
               className={({ isActive }) =>
@@ -33,7 +43,10 @@ export default function Sidebar() {
             {/* <span className="sidebarListItemText">Recent</span> */}
           </li>
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
+            <Groups3TwoToneIcon
+              className="sidebarIcon"
+              style={{ color: "#FFCA28" }}
+            />
             <NavLink
               className={({ isActive }) =>
                 isActive ? "navbar__link navbar__link--active" : "navbar__link"
