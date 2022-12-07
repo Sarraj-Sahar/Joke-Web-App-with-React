@@ -58,16 +58,13 @@
   
   .followStatus > div {
     display: flex;
-    gap: 1rem;
-    width: 80%;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
   
   .follow {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
     align-items: center;
     justify-content: center;
   }
@@ -92,4 +89,8 @@
       align-self: center;
       margin-bottom: 1rem;
       cursor: pointer;
+  }
+
+  a{
+    padding-bottom: 50px;
   }
