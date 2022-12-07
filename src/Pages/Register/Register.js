@@ -1,6 +1,40 @@
 import "./Register.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+  const [username, setUserName] = useState();
+  const [password, setPassword] = useState();
+  const [email, setEmail] = useState();
+  const navigate = useNavigate();
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    //dispatch(logIn());
+    const credentials = {
+      username: username,
+      email: email,
+      password: password,
+    };
+    fetch("https://jokeproject.onrender.com/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credentials),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+
+        if (result.username) {
+          navigate("/");
+        } else {
+          console.log("register failed");
+        }
+      });
+  };
+
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -12,12 +46,18 @@ export default function Register() {
         </div>
         <div className="loginRight">
           <form className="loginBox">
-            <input placeholder="Username" required className="loginInput" />
+            <input
+              placeholder="Username"
+              required
+              className="loginInput"
+              onChange={(e) => setUserName(e.target.value)}
+            />
             <input
               placeholder="Email"
               required
               className="loginInput"
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <input
               placeholder="Password"
@@ -25,14 +65,20 @@ export default function Register() {
               className="loginInput"
               type="password"
               minLength="6"
+              onChange={(e) => setPassword(e.target.value)}
             />
             <input
               placeholder="Password Again"
               required
               className="loginInput"
               type="password"
+              // onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="loginButton" type="submit">
+            <button
+              className="loginButton"
+              type="submit"
+              onClick={handleRegister}
+            >
               Sign Up
             </button>
             <button className="loginRegisterButton">

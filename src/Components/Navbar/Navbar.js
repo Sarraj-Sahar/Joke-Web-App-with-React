@@ -2,7 +2,6 @@ import "./Navbar.css";
 import { Search } from "@material-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { useContext } from "react";
 // import { AuthContext } from "../../context/AuthContext";
 
 export default function Navbar() {
@@ -13,7 +12,7 @@ export default function Navbar() {
   const logout = () => {
     localStorage.removeItem("user");
     navigate("/");
-  }
+  };
 
   return (
     <div className="topbarContainer">
@@ -31,14 +30,28 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="topbarRight">{
-      user?
-      <div>Welcome back {user.username} ! <a className="authLink" onClick={()=>logout()}>Sign out</a></div>
-      :<div>
-      <Link className="authLink" to="/login"> Login </Link> 
-      <span style={{"color":"grey"}}> or </span>
-      <Link className="authLink" to="/register"> Register </Link></div>
-      }</div>
+      <div className="topbarRight">
+        {user ? (
+          <div>
+            Welcome back {user.username} !{" "}
+            <a className="authLink" onClick={() => logout()}>
+              Sign out
+            </a>
+          </div>
+        ) : (
+          <div>
+            <Link className="authLink" to="/login">
+              {" "}
+              Login{" "}
+            </Link>
+            <span style={{ color: "grey" }}> or </span>
+            <Link className="authLink" to="/register">
+              {" "}
+              Register{" "}
+            </Link>
+          </div>
+        )}
+      </div>
       {/* <div className="topbarRight">
         {/* /// */}
       {/* <Link to={`/profile/${user.username}`}> */}

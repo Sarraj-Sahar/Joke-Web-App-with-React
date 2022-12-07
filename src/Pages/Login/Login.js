@@ -15,30 +15,27 @@ function Login(params) {
     event.preventDefault();
     //dispatch(logIn());
     const credentials = {
-      username:username,
-      password:password
+      username: username,
+      password: password,
     };
-    fetch('https://jokeproject.onrender.com/users/auth', {
-      method: 'POST',
+    fetch("https://jokeproject.onrender.com/users/auth", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(credentials)
-    }).then((response)=>response.json())
-    .then((result)=>{
-      console.log(result);
-      if(result.token) {
-        localStorage.setItem("user",JSON.stringify(result));
-        navigate("/");
-      } 
-      else {
-        console.log("incorrect creds");
-      }
+      body: JSON.stringify(credentials),
     })
-    
-    
-    ;
-    //navigate("/");
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        if (result.token) {
+          localStorage.setItem("user", JSON.stringify(result));
+          navigate("/");
+        } else {
+          console.log("incorrect creds");
+        }
+      });
+    navigate("/");
   };
 
   return (
@@ -57,16 +54,21 @@ function Login(params) {
               type="Username"
               required
               className="loginInput"
-              onChange={e => setUserName(e.target.value)}
+              onChange={(e) => setUserName(e.target.value)}
             />
             <input
               placeholder="Password"
               type="password"
               required
               className="loginInput"
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="loginButton" type="button" disabled={false} onClick={handleLogin}>
+            <button
+              className="loginButton"
+              type="button"
+              disabled={false}
+              onClick={handleLogin}
+            >
               {"Log In"}
               {/* TODO: place circularProgess Bar while fetching user data */}
               {/* {isFetching ? (
@@ -75,7 +77,7 @@ function Login(params) {
                 "Log In"
               )} */}
             </button>
-            <span className="loginForgot">Forgot Password?</span>
+            {/* <span className="loginForgot">Forgot Password?</span> */}
             <button className="loginRegisterButton">
               <a href="Register">Create a New Account</a>
               {/* {isFetching ? (

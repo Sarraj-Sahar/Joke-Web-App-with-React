@@ -4,15 +4,23 @@ import ShareIcon from "@mui/icons-material/Share";
 import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
+
 function JokeCard({ joke }) {
+  //handling Likes
+  const [like, setLike] = useState(joke.upvotes);
+  const [isLiked, setIsLiked] = useState(false);
+  const handleLike = () => {
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
+  };
   return (
-    // <h1>{joke.title}</h1>
     <Card style={{ width: "80%", margin: "1%" }}>
       <Card.Body>
         <Card.Title style={{ float: "left" }}>{joke.title}</Card.Title>
 
         <Card.Text style={{ display: "inline-block", textAlign: "left" }}>
-          {joke.text}
+          {joke.jokeText}
         </Card.Text>
         <div className="bottomCard">
           <Typography
@@ -21,12 +29,18 @@ function JokeCard({ joke }) {
             align="left"
             float="right"
           >
-            {joke.time}/{joke.date}
+            {joke.jokeDate}
           </Typography>
           <div className="buttons">
             <IconButton aria-label="add to favorites">
-              <p className="likes_text">{joke.likes}</p>
-              <FavoriteIcon style={{ color: "red" }} />
+              <p className="likes_text">{like}</p>
+              <FavoriteIcon
+                style={{
+                  color: isLiked ? "red" : "lightgrey",
+                  // border: "1px solid black",
+                }}
+                onClick={handleLike}
+              />
             </IconButton>
             <IconButton aria-label="share">
               <ShareIcon style={{ color: "#00B2FF" }} />
