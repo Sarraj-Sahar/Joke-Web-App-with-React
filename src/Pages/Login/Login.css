@@ -1,0 +1,105 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+    background-color: #20232a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loginWrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    gap: 10%;
+}
+  
+  .loginLeft,
+  .loginRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .loginLogo {
+    font-size: 50px;
+    font-weight: 800;
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .loginDesc {
+      color: rgb(247, 247, 247);
+    font-size: 24px;
+  }
+  
+  .loginBox{
+      height: 100%;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  
+  .loginInput{
+      height: 19%;
+      border-radius: 10px;
+      border: 1px solid gray;
+      font-size: 18px;
+      padding-left: 20px;
+  }
+  
+  .loginInput:focus{
+      outline: none;
+  }
+  
+  .loginButton{
+      height: 17%;
+      border-radius: 10px;
+      border: none;
+      background-color: #20232a;
+      color: #00d89b;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+  }
+  
+/* 
+  .loginButton:hover{
+    background-color:#00d89b;
+    color: #20232a;
+
+  } */
+  /**/
+  .loginButton:focus{
+    outline: none;
+  }
+  
+  .loginButton:disabled{
+    cursor: not-allowed;
+  }
+  
+  .loginForgot{
+      text-align: center;
+      color: #0d8f6a;
+  }
+  
+  .loginRegisterButton{
+      width: 60%;
+      align-self: center;
+      height: 17%;
+      border-radius: 10px;
+      border: none;
+      background-color:#00d89b;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+  }
+
+  a{
+      text-decoration: none;
+      color: #20232a;
+  }
